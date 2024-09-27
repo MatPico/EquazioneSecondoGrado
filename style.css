@@ -1,0 +1,172 @@
+/* con * si intende l'intero progetto
+    metto margini e padding a zero per tutto il progetto*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/*imposto alcune cose per tutto il body
+    il font
+    la disposizione allineata al centro
+    vh è la percentuale della finestra
+    imposto un colore grigio di sfondo per contrasto*/
+body {
+    font-family: 'Arial', sans-serif;
+    height: 110vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+}
+
+/*imposto ora la struttura grafica del conteiner che contiene le caselle e i bottoni*/
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+/*imposto il titolo*/
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/*imposta i testi di inserimento per l'utente*/
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+/*modifico la grafica delle box di input
+    come bordi
+    cambio di grafica una volta entrati nel box di input
+    e impaginazione della box*/
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.5s ease;
+}
+
+/*imposto il colore di transizione dell'input*/
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/*imposto un margine superiore per distanziare i pulsanti dai box*/
+.button-group {
+    margin-top: 20px;
+}
+
+/*imposto i pulsati
+    imposto impaginazione
+    imposto il cursor pointer ( fatto davvero e non come quello di llllerena che non sa cosa dovrebbe fare )
+    imposto il testo bianco perchè mi piace e lo sfondo verde per collegare alle box di input
+    e metto una transizione di ingrandimento con il metodo scale() come hover */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/*l'ho scritto sopra*/
+button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/*formattazione del risultato*/
+#risultato {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    min-height: 30px; /* Aggiunto per mantenere lo spazio anche quando vuoto */
+}
+
+/*pulsante storia... tanta roba*/
+#storiaBtn {
+    margin-top: 20px;
+    background-color: #2196F3;
+}
+
+/*hoover del pulsante storia che è la stessa base dell'altro pulsante*/
+#storiaBtn:hover {
+    background-color: #1E88E5;
+}
+
+/* Aggiungi un limite di altezza per la storia con scroll interno */
+#storia {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 250px; /* Limita l'altezza della sezione storia */
+    overflow-y: auto; /* Aggiungi lo scroll interno alla sezione */
+}
+
+/* Stile aggiuntivo per rendere visibile la scrollbar in modo pulito */
+#storia::-webkit-scrollbar {
+    width: 8px;
+}
+/*stessa cosa sopra*/
+#storia::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+/*setto quello che riguarda la lista della storia
+    alterno i colori dei box
+    divido i dati salvati in orario,data, risultato e equazione
+    tutte cose che faccio nel js
+*/
+#storia h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+#storiaLista {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#storiaLista li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+#storiaLista li:nth-child(odd) {
+    background-color: #f1f1f1;
+}
+
+#storiaLista li:hover {
+    background-color: #f7f7f7;
+}

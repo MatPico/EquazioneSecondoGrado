@@ -1,0 +1,68 @@
+<!--
+    Picoco Mattia 5infB 
+    Esempio di calcolatore di Equazioni di secondo grado con buffer di memoria
+-->
+<!DOCTYPE html>
+<!--dichiaro la lingua del codice -->
+<html lang="it">
+<head>
+    <!--nel tag "head" inserirò i metadati risalenti al codice, come impaginazione, title di pagina e collegamenti esterni visivi -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equazione di Secondo Grado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--creo un div container che contenga tutto il mio blocco di comandi, così da poter gestire l'insieme anche graficamente -->
+    <div class="container">
+        <h1>Calcolatore di Equazioni di Secondo Grado</h1>
+        <!--utilizzo un form perchè mi trovo bene come formattazione -->
+        <form id="equazioneForm">
+            <!--utilizzo "label" per mostrare all'utente un testo esplicito di cosa inserire
+                i label sono a loro volta anche clickabili... a prova di stupido
+                
+                i campi sono comunque obbligatori con il metodo "required" e sono input di testo
+                graficamente più bruttarelli ma molto più facili da gestire e comodi per giocarci
+                
+                do un nome e un id rispettivamente ad ogni casella così da tenerli in maniera più agevole
+                (non come il figlio di bill che non impagina neanche un ciclo for)
+            -->
+            <label for="a">Inserisci a:</label>
+            <input type="number" id="a" name="a" required>
+            
+            <label for="b">Inserisci b:</label>
+            <input type="number" id="b" name="b" required>
+            
+            <label for="c">Inserisci c:</label>
+            <input type="number" id="c" name="c" required>
+
+            <!--semplici pulsanti di invio e reset... 
+                reset cancella tutto
+                submit aziona un processo nel js
+            -->
+            <div class="button-group">
+                <button type="button" id="resetBtn">Reset</button>
+                <button type="submit" id="submitBtn">Calcola</button>
+            </div>
+        </form>
+
+        <!--qua verrà mostrato il risultato-->
+        <h3>Risultato:</h3>
+        <div id="risultato"></div>
+
+        <!--pulsante storia che aprirà una casella con le ultime 10 interazioni complete registrate nel browser-->
+        <div>
+            <button id="storiaBtn">Mostra Storia</button>
+        </div>
+
+        <!--il menù a scomparsa, sopra citato, con le ultime 10 interazioni divise in categoria-->
+        <div id="storia" style="display:none;">
+            <h3>Ultime 10 richieste:</h3>
+            <ul id="storiaLista"></ul>
+        </div>
+    </div>
+
+    <!--collegamento allo script-->
+    <script src="script.js"></script>
+</body>
+</html>
