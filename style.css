@@ -17,7 +17,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f4f8;
+    background-color: #c4c4c4;
 }
 
 /*imposto ora la struttura grafica del conteiner che contiene le caselle e i bottoni*/
@@ -57,6 +57,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: border-color 0.5s ease;
+    cursor: text;
 }
 
 /*imposto il colore di transizione dell'input*/
